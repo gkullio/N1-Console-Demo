@@ -63,17 +63,6 @@ resource "azurerm_network_security_group" "internal_nsg" {
   name                = "ubuntu-internal-NSG"
   location            = var.location
   resource_group_name = var.rg_name
-  security_rule {
-    name                       = "External-Access"
-    priority                   = 1002
-    direction                  = "Inbound"
-    access                     = "Allow"
-    protocol                   = "Tcp"
-    source_port_range          = "*"
-    destination_port_ranges    = ["80", "443", "9000", "9113"]
-    source_address_prefixes    = var.adminSrcAddr
-    destination_address_prefix = "*"
-  }
   depends_on = [ azurerm_resource_group.rg ]
   tags = {
     owner = var.resourceOwner
