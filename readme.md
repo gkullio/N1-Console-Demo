@@ -37,8 +37,10 @@
 6. ### Fill in the remaining required values in the terraform.tfvars file.
    
 7. ### Run terraform init to initialize the Terraform working directory.
-   1. `terraform init`
-   2. `terraform plan`
-   3. `terraform apply -auto-approve`
+    ```
+    terraform init
+    terraform plan
+    terraform apply -auto-approve
+    ```
 
 
