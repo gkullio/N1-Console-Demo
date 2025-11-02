@@ -2,8 +2,8 @@
 .terraform/
 
 # Omit directories
-./secrets/
-./Docker/*.env
+.secrets/
+.Docker/*.env
 .*.env
 
 # .tfstate files
