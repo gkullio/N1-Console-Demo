@@ -33,12 +33,12 @@
          ```
 
    2. Populate the terraform.tfvars file with your Azure Service Principal information 
-        ```
-        client_id
-        client_secret
-        tenant_id
-        subscription_id
-        ```
+        
+        >client_id
+        >client_secret
+        >tenant_id
+        >subscription_id
+        
 
    3. Populate the remaining fields in the terraform.tfvars file as needed
       1. NOTE*: "nginx_instance_prefix" should match the NAME value in the Docker/variables.env file.
