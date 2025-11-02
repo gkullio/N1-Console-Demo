@@ -1,4 +1,5 @@
-# This is designed to deploy 6 NGINX instances with Docker Compose inside of a Azure Ubuntu VM.
+# This is designed to deploy 6 NGINX instances
+# (3 NGINX Plus and 3 NGINX OSS) into Microsoft Azure using Terraform and Docker Compose.
 
 ## In order to use this demo, you need to perform the following steps:
 
