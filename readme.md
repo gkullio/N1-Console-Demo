@@ -1,4 +1,4 @@
-This is designed to deploy 6 NGINX instances with Docker Compose inside of a Azure Ubuntu VM.
+# This is designed to deploy 6 NGINX instances with Docker Compose inside of a Azure Ubuntu VM.
 
 In order to use this demo, you need to perform the following steps:
 1. Rename the following Files:
@@ -15,13 +15,16 @@ In order to use this demo, you need to perform the following steps:
    
 
 4. For the Docker/variables.env file, fill in the following values (NOTE: they do not need to be enclosed in quotes):
-   1. TOKEN=<Data Plane Token from NGINX One Console>
-   2. NAME=<Prefix name for your NGINX instances deployment e.g. first initial.last name>
+   1. TOKEN= 
+      1. Data Plane Token from NGINX One Console
+   2. NAME= 
+      1. Prefix name for your NGINX instances deployment e.g. j-smith
 
 
 3. For the terraform.tfvars file, fill in the following values:
-   1. Ensure you have an Azure Service Principal with Contributor role.  You can do this via the Azure Portal or Azure CLI.  Example CLI command:
-   az ad sp create-for-rbac --name <name> --role Contributor --scopes /subscriptions/<your Azure subscription ID>
+   1. Ensure you have an Azure Service Principal with Contributor role.  You can do this via the Azure Portal or Azure CLI.  
+      1. Example CLI command:
+         1. `az ad sp create-for-rbac --name <name> --role Contributor --scopes /subscriptions/<your Azure subscription ID>`
 
    2. Populate the terraform.tfvars file with your Azure Service Principal information 
       1. (client_id, client_secret, tenant_id, subscription_id)
