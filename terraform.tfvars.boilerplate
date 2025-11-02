@@ -34,6 +34,11 @@ nginx_instance_prefix       = ""
 jwt_secret                  = ""
 
 #################### Azure Service Principal ####################
+# Azure Credentials for the providers.tf in the root 
+# Azure Service Principal Information
+# --Retreive from Azure Portal or CLI--Recommend using the Contributor role for the Service Principal--
+# Azure CLI Example: 
+# az ad sp create-for-rbac --name <name> --role Contributor --scopes /subscriptions/<your Azure subscription ID>
 
 client_id                   = ""
 client_secret               = ""

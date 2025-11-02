@@ -140,32 +140,32 @@ services:
       - '172.20.2.105:9113:9113' # Open for Prometheus Scraper page
     restart: always
   #
-  nginx-waf-test:
-    environment:
-      env_file: ./variables.env
-      NGINX_AGENT_SERVER_HOST: 'agent.connect.nginx.com'
-      NGINX_AGENT_SERVER_GRPCPORT: '443'
-      NGINX_AGENT_TLS_ENABLE: 'true'
-      NGINX_AGENT_SERVER_TOKEN: $TOKEN # Datakey Fron Nginx One Console
-    container_name: $NAME-nginx-waf-test
-    image: private-registry.nginx.com/nginx-plus/agent:r35-debian
-    volumes:
-    - /opt/app_protect/bd_config:/opt/app_protect/bd_config
-    - /opt/app_protect/config:/opt/app_protect/config
-    - /etc/app_protect/conf:/etc/app_protect/conf
-    - ./nginx-plus/etc/nginx/nginx.conf:/etc/nginx/nginx.conf
-    - ./nginx-plus/etc/nginx/conf.d:/etc/nginx/conf.d
-    - ./nginx-plus/etc/nginx/includes:/etc/nginx/includes
-    - ./nginx-plus/usr/share/nginx/html:/usr/share/nginx/html
-    - ./nginx-repo.jwt:/etc/nginx/license.jwt # Only necessary when using NGINX Plus
-    networks:
-    - waf_network
-    ports:
-      - '172.20.2.106:80:80' # Open for HTTP
-      - '172.20.2.106:443:443' # Open for HTTPS
-      - '172.20.2.106:9000:9000' # Open for stub status page
-      - '172.20.2.106:9113:9113' # Open for Prometheus Scraper page
-    restart: always
+  # nginx-waf-test:
+  #   environment:
+  #     env_file: ./variables.env
+  #     NGINX_AGENT_SERVER_HOST: 'agent.connect.nginx.com'
+  #     NGINX_AGENT_SERVER_GRPCPORT: '443'
+  #     NGINX_AGENT_TLS_ENABLE: 'true'
+  #     NGINX_AGENT_SERVER_TOKEN: $TOKEN # Datakey Fron Nginx One Console
+  #   container_name: $NAME-nginx-waf-test
+  #   image: private-registry.nginx.com/nginx-plus/agent:r35-debian
+  #   volumes:
+  #   - /opt/app_protect/bd_config:/opt/app_protect/bd_config
+  #   - /opt/app_protect/config:/opt/app_protect/config
+  #   - /etc/app_protect/conf:/etc/app_protect/conf
+  #   - ./nginx-plus/etc/nginx/nginx.conf:/etc/nginx/nginx.conf
+  #   - ./nginx-plus/etc/nginx/conf.d:/etc/nginx/conf.d
+  #   - ./nginx-plus/etc/nginx/includes:/etc/nginx/includes
+  #   - ./nginx-plus/usr/share/nginx/html:/usr/share/nginx/html
+  #   - ./nginx-repo.jwt:/etc/nginx/license.jwt # Only necessary when using NGINX Plus
+  #   networks:
+  #   - waf_network
+  #   ports:
+  #     - '172.20.2.106:80:80' # Open for HTTP
+  #     - '172.20.2.106:443:443' # Open for HTTPS
+  #     - '172.20.2.106:9000:9000' # Open for stub status page
+  #     - '172.20.2.106:9113:9113' # Open for Prometheus Scraper page
+  #   restart: always
     #
   web1:
     hostname: $NAME-web1
