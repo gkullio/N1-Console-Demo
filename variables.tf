@@ -6,8 +6,8 @@ variable "rg_name" {}
 variable "ubuntu-hostname" {}
 variable "ubuntu-username" {}
 variable "ubuntu-password" {}
-variable "ubuntu_instance_size" {}
 variable "ubuntu_name" {}
+variable "ubuntu_instance_size" {}
 variable "ssh_key" {}
 
 ###################### Azure VNET Variables ####################
@@ -16,8 +16,6 @@ variable "vnet_name" {}
 variable "vnet_address_space" {}
 variable "mgmt_subnet_name" {}
 variable "mgmt_address_space" {}
-variable "ext_subnet_name" {}
-variable "ext_address_space" {}
 variable "int_subnet_name" {}
 variable "int_address_space" {}
 

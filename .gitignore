@@ -2,9 +2,11 @@
 .terraform/
 
 # Omit directories
-./secrets/
-./Docker/*.env
-.*.env
+/secrets/*.key
+/secrets/*.crt
+/secrets/*.jwt
+
+/Docker/*.env
 
 # .tfstate files
 *.tfstate
@@ -40,3 +42,6 @@ override.tf.json
 # Ignore CLI configuration files
 .terraformrc
 terraform.rc
+
+# Ignore worksapce files
+*.code-workspace
