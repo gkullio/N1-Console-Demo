@@ -71,23 +71,23 @@ ping -c 5 127.0.0.1
   cd "${WORKDIR}"
 
   # temp minimal repo for sparse checkout
-  rm -rf nginx-one-workshops || true
-  git init nginx-one-workshops
-  cd nginx-one-workshops
+  rm -rf N1-Console-Demo || true
+  git init N1-Console-Demo
+  cd N1-Console-Demo
   git remote add origin "${REPO_URL}"
   git sparse-checkout init --cone
-  git sparse-checkout set labs/lab2/nginx-plus labs/lab2/nginx-oss 
+  git sparse-checkout set nginx-plus nginx-oss 
   git fetch --depth=1 --filter=blob:none origin "${BRANCH}"
   git checkout "${BRANCH}"
 
   # move only the desired dirs next to compose file
   rm -rf "${WORKDIR}/nginx-plus" "${WORKDIR}/nginx-oss" || true
-  mv labs/lab2/nginx-plus "${WORKDIR}/nginx-plus"
-  mv labs/lab2/nginx-oss  "${WORKDIR}/nginx-oss"
+  mv nginx-plus "${WORKDIR}/nginx-plus"
+  mv nginx-oss  "${WORKDIR}/nginx-oss"
 
   # cleanup temp repo
   cd "${WORKDIR}"
-  rm -rf nginx-one-workshops
+  rm -rf N1-Console-Demo
 )
 
 sudo openssl req -x509 -nodes -days 1 -newkey rsa:2048 -keyout /opt/nginx/nginx-one/nginx-oss/etc/ssl/nginx/1-day.key -out /opt/nginx/nginx-one/nginx-oss/etc/ssl/nginx/1-day.crt -subj "/CN=g-kulland-NginxOneWorkshop"

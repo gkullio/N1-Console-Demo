@@ -2,7 +2,7 @@ This is designed to deploy 6 NGINX instances with Docker Compose inside of a Azu
 
 In order to use this demo, you need to perform the following steps:
 1. Rename the following Files:
-    a. terraform.tfvars.boilerplate  --> terraform.tfvars
+    a. terraform.tfvars.boilerplate  --> terraform.tfvars/n
     b. Docker/variables.env.boilerplace  --> Docker/variables.env
 
 2. Generate a Data Plane token from the NGINX One Console and save it for later use.

@@ -60,7 +60,7 @@ services:
     hostname: $NAME-plus3
     container_name: $NAME-plus3
     #image: private-registry.nginx.com/nginx-plus/agent:nginx-plus-r31-ubi-9-20240522 # From Nginx Private Registry
-    image: private-registry.nginx.com/nginx-plus/agent:nginx-plus-r35-debian-bookworm-202510210406
+    image: private-registry.nginx.com/nginx-plus/agent:nginx-plus-r35-alpine-3.22
     volumes: # Sync these folders to container
       - ./nginx-plus/etc/nginx/nginx.conf:/etc/nginx/nginx.conf
       - ./nginx-plus/etc/nginx/conf.d:/etc/nginx/conf.d

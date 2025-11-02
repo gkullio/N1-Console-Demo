@@ -106,7 +106,6 @@ resource "azurerm_network_interface" "internal_nic" {
     subnet_id                     = azurerm_subnet.int.id
     private_ip_address_allocation = "Static"
     private_ip_address            = "172.20.2.100"
-    public_ip_address_id          = azurerm_public_ip.plus1.id
   }
   ip_configuration {
     name                          = "internal_nic_plus2"

@@ -14,13 +14,14 @@ ssh_key                     = "~/.ssh/id_rsa.pub"
 
 vnet_name                   = ""
 vnet_address_space          = "172.20.0.0/16"
-mgmt_subnet_name            = ""
+mgmt_subnet_name            = "mgmt"
 mgmt_address_space          = "172.20.0.0/24"
-int_subnet_name             = ""
+int_subnet_name             = "internal"
 int_address_space           = "172.20.2.0/24"
 
 ###################### onboard.tpl Variables ####################
-repo_url                    = "https://github.com/nginxinc/nginx-one-workshops.git"
+# Pulls the folders from the repo and imports them into the workdir for docker compose to use
+repo_url                    = "https://github.com/gkullio/N1-Console-Demo.git"
 branch                      = "main"
 workdir                     = "/opt/nginx/nginx-one"
 
@@ -29,6 +30,7 @@ workdir                     = "/opt/nginx/nginx-one"
 # Generate a Data Plane token from the NGINX One console and place it in "dp_token" $TOKEN
 # The nginx_instance_prefix is used to name the NGINX instances created by the docker compose file $NAME
 # The jwt_secret is used to sign requests to login to the private NGINX Repo.  This is pulled from the MyF5 NGINX subscription
+
 dp_token                    = ""
 nginx_instance_prefix       = ""
 jwt_secret                  = ""
