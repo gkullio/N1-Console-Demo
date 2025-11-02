@@ -50,8 +50,9 @@
 
 -------------------------------------------------------------------------------------------------------
 
-# terraform.tfvars variables and descriptions
+
 # Terraform Variables Reference
+### terraform.tfvars variables and descriptions
 
 This document lists all entries from `terraform.tfvars.boilerplate` to help you configure the deployment quickly.
 
