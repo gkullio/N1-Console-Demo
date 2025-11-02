@@ -25,7 +25,10 @@
 4. ### For the terraform.tfvars file, fill in the following values:
    1. Ensure you have an Azure Service Principal with Contributor role.  You can do this via the Azure Portal or Azure CLI.  
       1. Example CLI command:
-         1. `az ad sp create-for-rbac --name <name> --role Contributor --scopes /subscriptions/<your Azure subscription ID>`
+         1. 
+         ```
+         az ad sp create-for-rbac --name <name> --role Contributor --scopes /subscriptions/<your Azure subscription ID>
+         ```
 
    2. Populate the terraform.tfvars file with your Azure Service Principal information 
       1. (client_id, client_secret, tenant_id, subscription_id)
@@ -39,7 +42,9 @@
 7. ### Run terraform init to initialize the Terraform working directory.
     ```
     terraform init
+    ```
     terraform plan
+    ```
     terraform apply -auto-approve
     ```
 
