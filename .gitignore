@@ -2,8 +2,9 @@
 .terraform/
 
 # Omit directories
-.secrets/
-/secrets/
+/secrets/*.key
+/secrets/*.crt
+/secrets/*.jwt
 
 /Docker/*.env
 .*.env
