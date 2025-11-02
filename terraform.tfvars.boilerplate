@@ -1,0 +1,41 @@
+adminSrcAddr                = ""
+resourceOwner               = ""
+resourceOwnerEmail          = ""
+location                    = ""
+rg_name                     = ""
+ubuntu-hostname             = ""
+ubuntu-username             = ""
+ubuntu-password             = ""
+ubuntu_name                 = ""
+ubuntu_instance_size        = "Standard_D2_v5"
+ssh_key                     = "~/.ssh/id_rsa.pub"
+
+###################### Azure VNET Variables ####################
+
+vnet_name                   = ""
+vnet_address_space          = "172.20.0.0/16"
+mgmt_subnet_name            = ""
+mgmt_address_space          = "172.20.0.0/24"
+int_subnet_name             = ""
+int_address_space           = "172.20.2.0/24"
+
+###################### onboard.tpl Variables ####################
+repo_url                    = "https://github.com/nginxinc/nginx-one-workshops.git"
+branch                      = "main"
+workdir                     = "/opt/nginx/nginx-one"
+
+
+##################### NGINX One Specific ####################
+# Generate a Data Plane token from the NGINX One console and place it in "dp_token" $TOKEN
+# The nginx_instance_prefix is used to name the NGINX instances created by the docker compose file $NAME
+# The jwt_secret is used to sign requests to login to the private NGINX Repo.  This is pulled from the MyF5 NGINX subscription
+dp_token                    = ""
+nginx_instance_prefix       = ""
+jwt_secret                  = ""
+
+#################### Azure Service Principal ####################
+
+client_id                   = ""
+client_secret               = ""
+tenant_id                   = ""
+subscription_id             = ""
