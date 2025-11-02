@@ -1,5 +1,6 @@
-# This is designed to deploy 6 NGINX instances
-# (3 NGINX Plus and 3 NGINX OSS) into Microsoft Azure using Terraform and Docker Compose.
+# NGINX One Console Demo Deployment with Terraform and Docker Compose
+
+## This is designed to deploy 6 NGINX instances. (3 NGINX Plus and 3 NGINX OSS) into Microsoft Azure 
 
 ## In order to use this demo, you need to perform the following steps:
 
