@@ -48,67 +48,7 @@
 
 ### 7. Run terraform commands to initialize the Terraform working directory.
 
-
-<<<<<<< HEAD
-Commit
-
-# terraform.tfvars variables and descriptions
-# Terraform Variables Reference
-
-This document lists all entries from `terraform.tfvars.boilerplate` to help you configure the deployment quickly.
-
-## tfvars entries
-
-| Section | Name | Example/Default | Notes |
-|---|---|---|---|
-| Core | adminSrcAddr | "[0.0.0.0/0]" | Source IP/CIDR allowed to access SSH/Web (NSGs). Comma-separated CIDRs supported. |
-| Core | resourceOwner | "" | Tag: owner |
-| Core | resourceOwnerEmail | "" | Tag: email |
-| Core | location | "westus2" | Azure region (e.g., eastus) |
-| Core | rg_name | "" | Azure Resource Group name |
-| Core | ubuntu-hostname | "nginx-1-host" | VM hostname |
-| Core | ubuntu-username | "azure" | Admin username |
-| Core | ubuntu-password | "" | Admin password (if used; SSH key preferred) |
-| Core | ubuntu_name | "nginx-1-vm" | VM resource name |
-| Core | ubuntu_instance_size | "Standard_D2_v5" | VM size |
-| Core | ssh_key | "~/.ssh/id_rsa.pub" | Path to public SSH key |
-
-| Section | Name | Example/Default | Notes |
-|---|---|---|---|
-| Azure VNET | vnet_name | "" | Virtual network name |
-| Azure VNET | vnet_address_space | "172.20.0.0/16" | VNet CIDR |
-| Azure VNET | mgmt_subnet_name | "mgmt" | Management subnet name |
-| Azure VNET | mgmt_address_space | "172.20.0.0/24" | Management subnet CIDR |
-| Azure VNET | int_subnet_name | "internal" | Internal subnet name |
-| Azure VNET | int_address_space | "172.20.2.0/24" | Internal subnet CIDR |
-
-| Section | Name | Example/Default | Notes |
-|---|---|---|---|
-| onboard.tpl | repo_url | "https://github.com/gkullio/N1-Console-Demo.git" | Repo cloned and copied into workdir for Docker Compose |
-| onboard.tpl | branch | "main" | Branch to use |
-| onboard.tpl | workdir | "/opt/nginx/nginx-one" | Working directory for NGINX/compose assets |
-
-| Section | Name | Example/Default | Notes |
-|---|---|---|---|
-| NGINX One | dp_token | "" | Data Plane token from NGINX One console ($TOKEN) |
-| NGINX One | nginx_instance_prefix | "" | Prefix used to name NGINX instances ($NAME) |
-| NGINX One | jwt_secret | "" | Secret to sign requests for private NGINX Repo (from MyF5 subscription) |
-
-| Section | Name | Example/Default | Notes |
-|---|---|---|---|
-| Azure SP | client_id | "" | Service Principal Application (client) ID |
-| Azure SP | client_secret | "" | Service Principal secret |
-| Azure SP | tenant_id | "" | Azure AD tenant ID |
-| Azure SP | subscription_id | "" | Azure subscription ID |
-
-## How to use
-
-- Copy `terraform.tfvars.boilerplate` to `terraform.tfvars`.
-- Fill in the values in `terraform.tfvars` using the examples above as a guide.
-- Keep secrets out of source control; consider using environment variables or a secrets backend.
-=======
-
-
+-------------------------------------------------------------------------------------------------------
 
 # terraform.tfvars variables and descriptions
 # Terraform Variables Reference
@@ -165,4 +105,3 @@ This document lists all entries from `terraform.tfvars.boilerplate` to help you 
 - Fill in the values in `terraform.tfvars` using the examples above as a guide.
 - Keep secrets out of source control; consider using environment variables or a secrets backend.
 
->>>>>>> 6933f9e62af06acdd60d37d594466598dff0cdf1
