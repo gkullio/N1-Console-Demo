@@ -1,6 +1,8 @@
 # NGINX One Console Demo Deployment with Terraform and Docker Compose
 
-## This is designed to deploy 6 NGINX instances.<br/>(3 NGINX Plus and 3 NGINX OSS) into Microsoft Azur<br/>In order to use this demo, you need to perform the following steps:
+## This is designed to deploy 6 NGINX instances.<br/>(3 NGINX Plus and 3 NGINX OSS) into Microsoft Azure
+
+## In order to use this demo, you need to perform the following steps:
 
 ### 1.  Rename the following Files:
    1. terraform.tfvars.boilerplate  --> terraform.tfvars
@@ -45,10 +47,9 @@
 ### 6. Fill in the remaining required values in the terraform.tfvars file.
    
 ### 7. Run terraform init to initialize the Terraform working directory.
-    
-    terraform init\
-    terraform plan\
-    terraform apply -auto-approve
+        terraform init\
+        terraform plan\
+        terraform apply -auto-approve
    
 
 
