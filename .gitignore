@@ -44,4 +44,4 @@ override.tf.json
 terraform.rc
 
 # Ignore worksapce files
-.code-workspace
+*.code-workspace
