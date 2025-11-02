@@ -3,6 +3,8 @@
 
 # Omit directories
 .secrets/
+/secrets/
+/Docker/
 .Docker/*.env
 .*.env
 
