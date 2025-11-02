@@ -1,6 +1,7 @@
 # NGINX One Console Demo Deployment with Terraform and Docker Compose
 
-## This is designed to deploy 6 NGINX instances. (3 NGINX Plus and 3 NGINX OSS) into Microsoft Azure 
+## This is designed to deploy 6 NGINX instances.\ 
+## (3 NGINX Plus and 3 NGINX OSS) into Microsoft Azure 
 
 ## In order to use this demo, you need to perform the following steps:
 
@@ -34,10 +35,10 @@
 
    2. Populate the terraform.tfvars file with your Azure Service Principal information 
         
-        >client_id
-        >client_secret
-        >tenant_id
-        >subscription_id
+        >client_id\
+        >client_secret\
+        >tenant_id\
+        >subscription_id\
         
 
    3. Populate the remaining fields in the terraform.tfvars file as needed
