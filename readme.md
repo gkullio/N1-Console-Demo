@@ -115,7 +115,6 @@ This document lists all entries from `terraform.tfvars.boilerplate` to help you 
 
 ## How to use
 
-- Copy `terraform.tfvars.boilerplate` to `terraform.tfvars`.
 - Fill in the values in `terraform.tfvars` using the examples above as a guide.
 - Keep secrets out of source control; consider using environment variables or a secrets backend.
 
