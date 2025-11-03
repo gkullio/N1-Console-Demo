@@ -74,7 +74,7 @@ This document lists all entries from `terraform.tfvars.boilerplate` to help you 
 | resourceOwner | "" | Tag: owner |
 | resourceOwnerEmail | "" | Tag: email |
 | location | "westus2" | Azure region (e.g., eastus) |
-| rg_name | "" | Azure Resource Group name |
+| rg_name | "N1-console-demo" | Azure Resource Group name |
 | ubuntu-hostname | "nginx-1-host" | VM hostname |
 | ubuntu-username | "azureuser" | Admin username |
 | ubuntu-password | "Azure123!@" | Admin password (if used; SSH key default) |
