@@ -49,7 +49,7 @@ resource "azurerm_network_security_group" "management_nsg" {
     protocol                   = "Tcp"
     source_port_range          = "*"
     destination_port_ranges    = ["22", "443"]
-    source_address_prefixes    = var.adminSrcAddr
+    source_address_prefix      = var.adminSrcAddr
     destination_address_prefix = "*"
   }
   depends_on = [ azurerm_resource_group.rg ]

@@ -1,5 +1,6 @@
 adminSrcAddr                = "0.0.0.0/0"
 # Put your own IP address here for better security.
+# Only use a single IP here.
 # https://ipv4.icanhazip.com/ can help you find your public IP address
 resourceOwner               = ""
 resourceOwnerEmail          = ""
