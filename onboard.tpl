@@ -61,7 +61,7 @@ ${nginx_jwt}
 EOF
 
 # --------------------------------------------------------------------
-# PULL ONLY labs/lab2/nginx-oss and labs/lab2/nginx-plus (sparse checkout)
+# PULL ONLY nginx-oss and nginx-plus directories (sparse checkout)
 # Places the two folders at: /opt/nginx/nginx-one/nginx-oss and nginx-plus
 # --------------------------------------------------------------------
 
@@ -90,8 +90,9 @@ ping -c 5 127.0.0.1
   rm -rf N1-Console-Demo
 )
 
-sudo openssl req -x509 -nodes -days 1 -newkey rsa:2048 -keyout /opt/nginx/nginx-one/nginx-oss/etc/ssl/nginx/1-day.key -out /opt/nginx/nginx-one/nginx-oss/etc/ssl/nginx/1-day.crt -subj "/CN=g-kulland-NginxOneWorkshop"
-sudo openssl req -x509 -nodes -days 30 -newkey rsa:2048 -keyout /opt/nginx/nginx-one/nginx-oss/etc/ssl/nginx/30-day.key -out /opt/nginx/nginx-one/nginx-oss/etc/ssl/nginx/30-day.crt -subj "/CN=g-kulland-NginxOneWorkshop"
+sudo openssl req -x509 -nodes -days 1 -newkey rsa:2048 -keyout /opt/nginx/nginx-one/nginx-oss/etc/ssl/nginx/1-day.key -out /opt/nginx/nginx-one/nginx-oss/etc/ssl/nginx/1-day.crt -subj "/CN=${NAME}-NginxOneWorkshop"
+sudo openssl req -x509 -nodes -days 30 -newkey rsa:2048 -keyout /opt/nginx/nginx-one/nginx-oss/etc/ssl/nginx/30-day.key -out /opt/nginx/nginx-one/nginx-oss/etc/ssl/nginx/30-day.crt -subj "/CN=${NAME}-NginxOneWorkshop"
+
 # --------------------------------------------------------------------
 # Bring stack up
 # --------------------------------------------------------------------
@@ -101,3 +102,6 @@ sudo docker compose --env-file "${WORKDIR}/variables.env" -f "${WORKDIR}/docker-
 # sudo docker compose --env-file /opt/nginx/nginx-one/variables.env -f /opt/nginx/nginx-one/docker-compose.yml down
 
 sudo reboot
+
+# Test script to auto create a data plane key
+# need to set the data plane key dynamically
