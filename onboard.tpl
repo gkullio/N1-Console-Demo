@@ -90,8 +90,9 @@ ping -c 5 127.0.0.1
   rm -rf N1-Console-Demo
 )
 
-sudo openssl req -x509 -nodes -days 1 -newkey rsa:2048 -keyout /opt/nginx/nginx-one/nginx-oss/etc/ssl/nginx/1-day.key -out /opt/nginx/nginx-one/nginx-oss/etc/ssl/nginx/1-day.crt -subj "/CN=g-kulland-NginxOneWorkshop"
-sudo openssl req -x509 -nodes -days 30 -newkey rsa:2048 -keyout /opt/nginx/nginx-one/nginx-oss/etc/ssl/nginx/30-day.key -out /opt/nginx/nginx-one/nginx-oss/etc/ssl/nginx/30-day.crt -subj "/CN=g-kulland-NginxOneWorkshop"
+sudo openssl req -x509 -nodes -days 1 -newkey rsa:2048 -keyout /opt/nginx/nginx-one/nginx-oss/etc/ssl/nginx/1-day.key -out /opt/nginx/nginx-one/nginx-oss/etc/ssl/nginx/1-day.crt -subj "/CN=${NAME}-NginxOneWorkshop"
+sudo openssl req -x509 -nodes -days 30 -newkey rsa:2048 -keyout /opt/nginx/nginx-one/nginx-oss/etc/ssl/nginx/30-day.key -out /opt/nginx/nginx-one/nginx-oss/etc/ssl/nginx/30-day.crt -subj "/CN=${NAME}-NginxOneWorkshop"
+
 # --------------------------------------------------------------------
 # Bring stack up
 # --------------------------------------------------------------------
