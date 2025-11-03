@@ -8,7 +8,14 @@
    1. terraform.tfvars.boilerplate  --> terraform.tfvars
    2. Docker/variables.env.boilerplace  --> Docker/variables.env
 
-### 2. Generate a Data Plane token from the NGINX One Console and save it for later use.
+### 2. Generate a Data Plane token from the NGINX One Console
+   1. Log into NGINX One Console
+   2. Navigate to Manage --> Data Plane Keys
+   3. Create a new Data Plane Token
+      1. Give it a name e.g. "n1-console-demo"
+      2. Give it an expiration date
+      3. Click Create Token
+      4. Copy the generated token to a safe place as you will need it in the next steps.
 
 ### 3. Either use a NGINX One evaluation license, or use the existing options available in MyF5.
    1. For the purposes of this demo, you only need the JSON Web Token.
@@ -25,14 +32,13 @@
 
 
 ### 5. For the terraform.tfvars file, fill in the following values:
-   1. Ensure you have an Azure Service Principal with Contributor role.  You can do this via the Azure Portal or Azure CLI.  
-      1. Example CLI command:
-         1. 
+   1. #### Ensure you have an Azure Service Principal with Contributor role.  You can do this via the Azure Portal or Azure CLI.  
+      1.  Example CLI command:
          ```
          az ad sp create-for-rbac --name <name> --role Contributor --scopes /subscriptions/<your Azure subscription ID>
          ```
 
-   2. Populate the terraform.tfvars file with your Azure Service Principal information 
+   2. #### Populate the terraform.tfvars file with your Azure Service Principal information 
         
         client_id\
         client_secret\
@@ -40,13 +46,16 @@
         subscription_id
         
 
-   3. Populate the remaining fields in the terraform.tfvars file as needed
-      1. NOTE*: "nginx_instance_prefix" should match the NAME value in the Docker/variables.env file.
-   
+   3. #### Populate the Resource Owner and Resource Owner Email fields with your information
 
-### 6. Fill in the remaining required values in the terraform.tfvars file.
+   4. #### Populate the dp_token field with the Data Plane Token from NGINX One Console
 
-### 7. Run terraform commands to initialize the Terraform working directory.
+   5. #### Populate the jwt_secret field with the contents of the JWT token from MyF5
+
+   6. #### Update any other variables as needed (e.g., location, VM size, etc.)   
+
+
+### 6. Run terraform commands to initialize the Terraform working directory.
 
 -------------------------------------------------------------------------------------------------------
 
