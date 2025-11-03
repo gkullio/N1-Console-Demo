@@ -32,7 +32,7 @@
          az ad sp create-for-rbac --name <name> --role Contributor --scopes /subscriptions/<your Azure subscription ID>
          ```
 
-   2. #### Populate the terraform.tfvars file with your Azure Service Principal information 
+   2. Populate the terraform.tfvars file with your Azure Service Principal information 
         
         client_id\
         client_secret\
@@ -67,8 +67,8 @@ This document lists all entries from `terraform.tfvars.boilerplate` to help you 
 | location | "westus2" | Azure region (e.g., eastus) |
 | rg_name | "" | Azure Resource Group name |
 | ubuntu-hostname | "nginx-1-host" | VM hostname |
-| ubuntu-username | "azure" | Admin username |
-| ubuntu-password | "" | Admin password (if used; SSH key preferred) |
+| ubuntu-username | "azureuser" | Admin username |
+| ubuntu-password | "Azure123!@" | Admin password (if used; SSH key default) |
 | ubuntu_name | "nginx-1-vm" | VM resource name |
 | ubuntu_instance_size | "Standard_D2_v5" | VM size |
 | ssh_key | "~/.ssh/id_rsa.pub" | Path to public SSH key |
@@ -76,7 +76,6 @@ This document lists all entries from `terraform.tfvars.boilerplate` to help you 
 ## Section: Azure VNET Variables
 | Name | Example/Default | Notes |
 |---|---|---|
-| vnet_name | "" | Virtual network name |
 | vnet_address_space | "172.20.0.0/16" | VNet CIDR |
 | mgmt_subnet_name | "mgmt" | Management subnet name |
 | mgmt_address_space | "172.20.0.0/24" | Management subnet CIDR |
@@ -94,7 +93,7 @@ This document lists all entries from `terraform.tfvars.boilerplate` to help you 
 | Name | Example/Default | Notes |
 |---|---|---|
 | dp_token | "" | Data Plane token from NGINX One console ($TOKEN) |
-| nginx_instance_prefix | "" | Prefix used to name NGINX instances ($NAME) |
+| nginx_instance_prefix | "test-nginx" | Prefix used to name NGINX instances ($NAME) |
 | jwt_secret | "" | Secret to sign requests for private NGINX Repo (from MyF5 subscription) |
 
 ## Section: Azure Service Principal 

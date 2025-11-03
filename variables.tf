@@ -12,7 +12,7 @@ variable "ssh_key" {}
 
 ###################### Azure VNET Variables ####################
 
-variable "vnet_name" {}
+
 variable "vnet_address_space" {}
 variable "mgmt_subnet_name" {}
 variable "mgmt_address_space" {}
