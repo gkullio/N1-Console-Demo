@@ -91,7 +91,7 @@ This document lists all entries from `terraform.tfvars.boilerplate` to help you 
 | int_subnet_name | "internal" | Internal subnet name |
 | int_address_space | "172.20.2.0/24" | Internal subnet CIDR |
 
-## Section: Onboarding Template Variables
+## Section: Onboarding Template Variables (No changes needed)
 | Name | Example/Default | Notes |
 |---|---|---|
 | repo_url | "https://github.com/gkullio/N1-Console-Demo.git" | Repo cloned and copied into workdir for Docker Compose |
