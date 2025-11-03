@@ -58,7 +58,7 @@ This document lists all entries from `terraform.tfvars.boilerplate` to help you 
 
 ## tfvars entries
 
-# Section: Ubuntu VM Variables
+## Section: Ubuntu VM Variables
 | Name | Example/Default | Notes |
 |---|---|---|
 | adminSrcAddr | "[0.0.0.0/0]" | Source IP/CIDR allowed to access SSH/Web (NSGs). Comma-separated CIDRs supported. |
@@ -73,7 +73,7 @@ This document lists all entries from `terraform.tfvars.boilerplate` to help you 
 | ubuntu_instance_size | "Standard_D2_v5" | VM size |
 | ssh_key | "~/.ssh/id_rsa.pub" | Path to public SSH key |
 
-# Section: Azure VNET Variables
+## Section: Azure VNET Variables
 | Name | Example/Default | Notes |
 |---|---|---|
 | vnet_name | "" | Virtual network name |
@@ -83,21 +83,21 @@ This document lists all entries from `terraform.tfvars.boilerplate` to help you 
 | int_subnet_name | "internal" | Internal subnet name |
 | int_address_space | "172.20.2.0/24" | Internal subnet CIDR |
 
-# Section: Onboarding Template Variables
+## Section: Onboarding Template Variables
 | Name | Example/Default | Notes |
 |---|---|---|
 | repo_url | "https://github.com/gkullio/N1-Console-Demo.git" | Repo cloned and copied into workdir for Docker Compose |
 | branch | "main" | Branch to use |
 | workdir | "/opt/nginx/nginx-one" | Working directory for NGINX/compose assets |
 
-# Section: NGINX One Console
+## Section: NGINX One Console
 | Name | Example/Default | Notes |
 |---|---|---|
 | dp_token | "" | Data Plane token from NGINX One console ($TOKEN) |
 | nginx_instance_prefix | "" | Prefix used to name NGINX instances ($NAME) |
 | jwt_secret | "" | Secret to sign requests for private NGINX Repo (from MyF5 subscription) |
 
-# Section: Azure Service Principal 
+## Section: Azure Service Principal 
 | Name | Example/Default | Notes |
 |---|---|---|
 | client_id | "" | Service Principal Application (client) ID |
