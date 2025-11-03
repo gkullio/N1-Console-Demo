@@ -2,17 +2,17 @@ adminSrcAddr                = "[0.0.0.0/0]"
 resourceOwner               = ""
 resourceOwnerEmail          = ""
 location                    = "westus2"
-rg_name                     = ""
+rg_name                     = "N1-console-demo"
 ubuntu-hostname             = "nginx-1-host"
 ubuntu-username             = "azure"
-ubuntu-password             = ""
+ubuntu-password             = "Azure123!@"
 ubuntu_name                 = "nginx-1-vm"
 ubuntu_instance_size        = "Standard_D2_v5"
 ssh_key                     = "~/.ssh/id_rsa.pub"
 
 ###################### Azure VNET Variables ####################
 
-vnet_name                   = ""
+
 vnet_address_space          = "172.20.0.0/16"
 mgmt_subnet_name            = "mgmt"
 mgmt_address_space          = "172.20.0.0/24"
@@ -32,7 +32,7 @@ workdir                     = "/opt/nginx/nginx-one"
 # The jwt_secret is used to sign requests to login to the private NGINX Repo.  This is pulled from the MyF5 NGINX subscription
 
 dp_token                    = ""
-nginx_instance_prefix       = ""
+nginx_instance_prefix       = "test-nginx"
 jwt_secret                  = ""
 
 #################### Azure Service Principal ####################

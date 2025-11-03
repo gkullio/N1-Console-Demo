@@ -1,8 +1,8 @@
 # Create virtual machine
-resource "azurerm_linux_virtual_machine" "kulland_ubuntu_vm" {
+resource "azurerm_linux_virtual_machine" "ubuntu_vm" {
   name                  = var.ubuntu_name
   location              = var.location
-  resource_group_name   = var.rg_name
+  resource_group_name   = azurerm_resource_group.rg.name
   network_interface_ids = [azurerm_network_interface.management_nic.id, azurerm_network_interface.internal_nic.id]
   size                  = var.ubuntu_instance_size
   #custom_data           = filebase64("${path.module}/onboard.tpl", {

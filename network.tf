@@ -1,7 +1,7 @@
 ############## Create Virtual Network and Subnets ##############
 resource "azurerm_virtual_network" "vnet" {
-  name                = var.vnet_name
-  resource_group_name = var.rg_name
+  name                = "${var.rg_name}-${random_id.random_id.hex}-vnet"
+  resource_group_name = azurerm_resource_group.rg.name
   location            = var.location
   address_space       = [var.vnet_address_space]
   depends_on          = [ azurerm_resource_group.rg ]
@@ -9,14 +9,14 @@ resource "azurerm_virtual_network" "vnet" {
 
 resource "azurerm_subnet" "mgmt" {
   name                 = var.mgmt_subnet_name
-  resource_group_name  = var.rg_name
+  resource_group_name  = azurerm_resource_group.rg.name
   virtual_network_name = azurerm_virtual_network.vnet.name
   address_prefixes     = [var.mgmt_address_space]
 }
 
 resource "azurerm_subnet" "int" {
   name                 = var.int_subnet_name
-  resource_group_name  = var.rg_name
+  resource_group_name  = azurerm_resource_group.rg.name
   virtual_network_name = azurerm_virtual_network.vnet.name
   address_prefixes     = [var.int_address_space]
 }
@@ -25,7 +25,7 @@ resource "azurerm_subnet" "int" {
 resource "azurerm_public_ip" "management_pubip" {
   name                = "ubuntu-management_pubip"
   location            = var.location
-  resource_group_name = var.rg_name
+  resource_group_name = azurerm_resource_group.rg.name
   allocation_method   = "Static"   # Static is required due to the use of the Standard sku
   sku                 = "Standard" # the Standard sku is required due to the use of availability zones
   depends_on = [ azurerm_resource_group.rg ]
@@ -39,7 +39,7 @@ resource "azurerm_public_ip" "management_pubip" {
 resource "azurerm_network_security_group" "management_nsg" {
   name                = "ubuntu-mgmt-NSG"
   location            = var.location
-  resource_group_name = var.rg_name
+  resource_group_name = azurerm_resource_group.rg.name
 
   security_rule {
     name                       = "SSH-WebUI"
@@ -62,7 +62,7 @@ resource "azurerm_network_security_group" "management_nsg" {
 resource "azurerm_network_security_group" "internal_nsg" {
   name                = "ubuntu-internal-NSG"
   location            = var.location
-  resource_group_name = var.rg_name
+  resource_group_name = azurerm_resource_group.rg.name
   depends_on = [ azurerm_resource_group.rg ]
   tags = {
     owner = var.resourceOwner
@@ -74,7 +74,7 @@ resource "azurerm_network_security_group" "internal_nsg" {
 resource "azurerm_network_interface" "management_nic" {
   name                = "ubuntu-management-nic"
   location            = var.location
-  resource_group_name = var.rg_name
+  resource_group_name = azurerm_resource_group.rg.name
 
   ip_configuration {
     name                          = "managenment_nic_configuration"
@@ -92,7 +92,7 @@ resource "azurerm_network_interface" "management_nic" {
 resource "azurerm_network_interface" "internal_nic" {
   name                = "ubuntu-internal-nic"
   location            = var.location
-  resource_group_name = var.rg_name
+  resource_group_name = azurerm_resource_group.rg.name
 
   ip_configuration {
     name                          = "internal_nic_configuration"
