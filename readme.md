@@ -70,7 +70,7 @@ This document lists all entries from `terraform.tfvars.boilerplate` to help you 
 ## Section: Ubuntu VM Variables
 | Name | Example/Default | Notes |
 |---|---|---|
-| adminSrcAddr | "[0.0.0.0/0]" | Source IP/CIDR allowed to access SSH/Web (NSGs). Comma-separated CIDRs supported. |
+| adminSrcAddr | "0.0.0.0/0" | Source IP/CIDR allowed to access SSH/Web (NSGs). Comma-separated CIDRs supported. |
 | resourceOwner | "" | Tag: owner |
 | resourceOwnerEmail | "" | Tag: email |
 | location | "westus2" | Azure region (e.g., eastus) |
