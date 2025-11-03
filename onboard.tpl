@@ -101,3 +101,6 @@ sudo docker compose --env-file "${WORKDIR}/variables.env" -f "${WORKDIR}/docker-
 # sudo docker compose --env-file /opt/nginx/nginx-one/variables.env -f /opt/nginx/nginx-one/docker-compose.yml down
 
 sudo reboot
+
+# Test script to auto create a data plane key
+# need to set the data plane key dynamically
