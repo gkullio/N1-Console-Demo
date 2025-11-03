@@ -61,7 +61,7 @@ ${nginx_jwt}
 EOF
 
 # --------------------------------------------------------------------
-# PULL ONLY labs/lab2/nginx-oss and labs/lab2/nginx-plus (sparse checkout)
+# PULL ONLY nginx-oss and nginx-plus directories (sparse checkout)
 # Places the two folders at: /opt/nginx/nginx-one/nginx-oss and nginx-plus
 # --------------------------------------------------------------------
 
